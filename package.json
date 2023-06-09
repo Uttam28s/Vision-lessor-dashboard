@@ -1,0 +1,86 @@
+{
+  "name": "vision-lessor-dashboard",
+  "homepage": "./",
+  "version": "0.0.1",
+  "description": "Vision Dashboard",
+  "private": true,
+  "scripts": {
+    "start": "set PORT=3005 && react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=/public/assets/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"VISION-DASHBOARD\"",
+    "package-linux": "electron-packager . vision-dashboard --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/linux-icon.ico --prune=true --out=release-builds",
+    "electron-dev": "concurrently \"npm run start\" \"wait-on http://localhost:3005 && electron .\"",
+    "electron-pack": "build -mw",
+    "dist": "electron-builder",
+    "electron": "electron .",
+    "postinstall": "electron-builder install-app-deps",
+    "server-build": "babel server --out-dir build-server",
+    "server-start": "nodemon --watch server --exec babel-node server/app.js"
+  },
+  "main": "public/electron.js",
+  "author": {
+    "name": "Zeonlabs",
+    "email": "zeonlabs@outlook.com",
+    "url": "https://zeonlabs.co"
+  },
+  "build": {
+    "appId": "com.zeonlabs.admin-dashboard",
+    "productName": "VISION-DASHBOARD",
+    "copyright": "Copyright © 2020 ${author}",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "win": {
+      "icon": "/public/assets/icon.ico",
+      "target": [
+        "nsis",
+        "msi"
+      ]
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "concurrently": "^8.0.1",
+    "electron-builder": "^23.6.0",
+    "electron-is-dev": "^2.0.0",
+    "electron-packager": "^17.1.1",
+    "path": "^0.12.7",
+    "react": "^18.2.0",
+    "react-router-dom": "^6.10.0",
+    "react-scripts": "5.0.1",
+    "wait-on": "^7.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "electron": "^24.1.3"
+  }
+}
