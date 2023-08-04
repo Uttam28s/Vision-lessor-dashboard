@@ -1,0 +1,51 @@
+@import url(./viewBills.scss);
+@import url(./createBill.scss);
+@import url(./variable.scss);
+@import url(./header.scss);
+@import '~antd/dist/antd.css';
+
+
+::-webkit-scrollbar-track {
+  background: #4d4d4d;
+  width: 35px;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00000063;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar {
+  border-radius: 20px;
+  width: 9px;
+  /* background: #ca090900; */
+}
+
+.vision-logo {
+  height: 46px;
+  margin: 16px 6px;
+  background: #ffffff33;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    color: #fff;
+    font-size: x-large;
+    font-weight: 700;
+    margin: 0;
+  }
+}
+
+.site-layout-sub-header-background {
+  background: #fff;
+}
+
+.site-layout-background {
+  background: #fff;
+}
+
+// .margin-all{
+//   margin: 20px;
+//   padding: 20px;
+// }

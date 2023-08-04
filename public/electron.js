@@ -3,13 +3,11 @@ const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const isDev = require("electron-is-dev");
 const path = require("path");
-
 let mainWindow;
-
 function createWindow() {
     mainWindow = new BrowserWindow({
         webPreferences: { nodeIntegration: true },
-          icon: path.join(__dirname + '/public/assets/icon.ico'),
+          icon: path.join(__dirname + '/public/assets/icon.png'),
     });
     mainWindow.setMenuBarVisibility(false);
     mainWindow.maximize();
@@ -20,11 +18,8 @@ function createWindow() {
     );
     mainWindow.on("closed", () => (mainWindow = null));
 }
-
 app.allowRendererProcessReuse = true;
-
 const gotTheLock = app.requestSingleInstanceLock();
-
 if (!gotTheLock) app.quit();
 else {
     app.on("second-instance", (event, commandLine, workingDirectory) => {
@@ -35,17 +30,13 @@ else {
     });
     app.on("ready", createWindow);
 }
-
 app.on("window-all-closed", () => {
     if (process.platform !== "darwin") {
       app.quit();
     }
   });
-  
   app.on("activate", () => {
     if (mainWindow === null) {
       createWindow();
     }
   });
-  
-
