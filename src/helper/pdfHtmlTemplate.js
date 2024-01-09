@@ -279,7 +279,7 @@ function generateHTML(bill) {
             "
           >
             Ground Floor, 94-Ayodhya Row House, NR. Brilliyant School, Dabholi,
-            Katargam, Surat, Gujarat-395004. Mo no:+919372587046.
+            Katargam, Surat, Gujarat-395004. Mo no:+919601291942.
           </p>
           <div
             style="
