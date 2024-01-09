@@ -731,7 +731,7 @@ function generateHTML(bill) {
             "
           >
             <p class="s1">TERM & CONDITION</p>
-            <p class="s1">For, VISION LESSOR HUF (KARTA)</p>
+            <p class="s1">For, VISION LESSOR</p>
           </div>
           <div style="position: relative; padding-left: 4pt">
             <p>Subject to SURAT jurisdiction.</p>
